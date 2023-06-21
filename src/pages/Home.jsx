@@ -1,5 +1,5 @@
 import FilterSection from '../components/filterSection/FilterSection'
-import Posts from '../components/posts/Posts'
+import Posts from '../components/grid/PostGrid'
 
 const Home = () => {
   return (

@@ -1,4 +1,4 @@
-import Post from './Post'
+import Post from './SinglePost'
 
 const Posts = () => {
   return (

@@ -1,6 +1,6 @@
-import RelatedPostItem from './RelatedPostItem'
+import RelatedPostItem from './RelatedBlogItem'
 
-const RelatedPostsList = () => {
+const RelatedBlogsList = () => {
   return (
     <aside>
       <h4 className="mb-4 text-xl font-medium" id="lws-relatedPosts">
@@ -13,4 +13,4 @@ const RelatedPostsList = () => {
   )
 }
 
-export default RelatedPostsList
+export default RelatedBlogsList

@@ -1,6 +1,6 @@
 import git from '../../assets/img/git.webp'
 
-const RelatedPostItem = () => {
+const RelatedBlogItem = () => {
   return (
     <div className="card">
       <a href="post.html">
@@ -19,4 +19,4 @@ const RelatedPostItem = () => {
   )
 }
 
-export default RelatedPostItem
+export default RelatedBlogItem

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import git from '../../assets/img/git.webp'
 
-const Post = () => {
+const SingleBlog = () => {
   return (
     <div className="lws-card">
       <Link to="post-details">
@@ -28,4 +28,4 @@ const Post = () => {
   )
 }
 
-export default Post
+export default SingleBlog

@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Navbar from './components/navbar/Navbar'
 import Home from './pages/Home'
-import Post from './pages/Post'
+import Blog from './pages/Blog'
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/post-details" element={<Post />} />
+        <Route path="/post-details" element={<Blog />} />
       </Routes>
     </BrowserRouter>
   )

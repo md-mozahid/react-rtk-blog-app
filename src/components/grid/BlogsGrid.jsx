@@ -1,6 +1,6 @@
-import Post from './SinglePost'
+import Post from './SingleBlog'
 
-const Posts = () => {
+const BlogsGrid = () => {
   return (
     <main className="post-container" id="lws-postContainer">
       <Post />
@@ -9,4 +9,4 @@ const Posts = () => {
   )
 }
 
-export default Posts
+export default BlogsGrid

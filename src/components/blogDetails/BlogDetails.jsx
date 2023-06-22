@@ -1,4 +1,4 @@
-const PostDetails = () => {
+const BlogDetails = () => {
   return (
     <section className="post-page-container">
       <main className="post">
@@ -43,4 +43,4 @@ const PostDetails = () => {
   )
 }
 
-export default PostDetails
+export default BlogDetails

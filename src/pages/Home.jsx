@@ -1,12 +1,12 @@
 import FilterSection from '../components/filterSection/FilterSection'
-import Posts from '../components/grid/PostGrid'
+import BlogsGrid from '../components/grid/BlogsGrid'
 
 const Home = () => {
   return (
     <>
       <section className="wrapper">
         <FilterSection />
-        <Posts />
+        <BlogsGrid />
       </section>
     </>
   )

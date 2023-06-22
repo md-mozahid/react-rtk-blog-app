@@ -1,16 +1,17 @@
-const BlogDetails = () => {
+const BlogDetails = ({ blog = {} }) => {
+  const { image, title } = blog
   return (
     <section className="post-page-container">
       <main className="post">
         <img
-          src="./images/mern.webp"
+          src={image}
           alt="githum"
           className="w-full rounded-md"
           id="lws-megaThumb"
         />
         <div>
           <h1 className="mt-6 text-2xl post-title" id="lws-singleTitle">
-            MERN stack for Web Development
+            {title}
           </h1>
           <div className="tags" id="lws-singleTags">
             <span>#python,</span> <span>#tech,</span> <span>#git</span>

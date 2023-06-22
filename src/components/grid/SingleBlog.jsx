@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom'
 // eslint-disable-next-line react/prop-types
 const SingleBlog = ({ blog = {} }) => {
   // eslint-disable-next-line react/prop-types
-  const { image, createdAt, likes, title } = blog
+  const { id, image, createdAt, likes, title } = blog
   return (
     <div className="lws-card">
-      <Link to="post-details">
+      <Link to={`blogs/${id}`}>
         <img src={image} className="lws-card-image" alt="" />
       </Link>
       <div className="p-4">

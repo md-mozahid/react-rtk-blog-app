@@ -1,21 +1,24 @@
 import { Link } from 'react-router-dom'
-import git from '../../assets/img/git.webp'
 
-const SingleBlog = () => {
+// eslint-disable-next-line react/prop-types
+const SingleBlog = ({ blog = {} }) => {
+  // eslint-disable-next-line react/prop-types
+  const { image, createdAt, likes, title } = blog
   return (
     <div className="lws-card">
       <Link to="post-details">
-        <img src={git} className="lws-card-image" alt="" />
+        <img src={image} className="lws-card-image" alt="" />
       </Link>
       <div className="p-4">
         <div className="lws-card-header">
-          <p className="lws-publishedDate">2023-05-01</p>
+          <p className="lws-publishedDate">{createdAt}</p>
           <p className="lws-likeCount">
-            <i className="fa-regular fa-thumbs-up"></i>100
+            <i className="fa-regular fa-thumbs-up"></i>
+            {likes}
           </p>
         </div>
         <a href="post.html" className="lws-postTitle">
-          Top Github Alternatives
+          {title}
         </a>
         <div className="lws-tags">
           <span>#python,</span> <span>#tech,</span> <span>#git</span>

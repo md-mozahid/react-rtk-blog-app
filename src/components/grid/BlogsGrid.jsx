@@ -9,11 +9,11 @@ const BlogsGrid = () => {
   const { blogs, isLoading, isError, error } = useSelector(
     (state) => state.blogs
   )
-  const { filter } = useSelector((state) => state.filters)
+  const { filter, sort } = useSelector((state) => state.filters)
 
   useEffect(() => {
-    dispatch(fetchBlogs())
-  }, [dispatch])
+    dispatch(fetchBlogs(sort))
+  }, [sort])
 
   let content = null
 

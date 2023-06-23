@@ -10,7 +10,7 @@ import Loading from '../ui/Loading'
 const Blog = () => {
   const dispatch = useDispatch()
   const { blog, isLoading, isError, error } = useSelector((state) => state.blog)
-console.log(blog)
+
   const { blogId } = useParams()
 
   useEffect(() => {

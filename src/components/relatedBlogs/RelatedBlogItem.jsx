@@ -1,7 +1,4 @@
-import { useSelector } from 'react-redux'
-
-const RelatedBlogItem = () => {
-  const { blog } = useSelector((state) => state.blog)
+const RelatedBlogItem = ({ blog }) => {
   const { image, createdAt } = blog
   return (
     <div className="card">

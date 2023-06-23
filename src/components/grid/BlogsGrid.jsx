@@ -9,6 +9,7 @@ const BlogsGrid = () => {
   const { blogs, isLoading, isError, error } = useSelector(
     (state) => state.blogs
   )
+  const { filter } = useSelector((state) => state.filters)
 
   useEffect(() => {
     dispatch(fetchBlogs())
@@ -26,7 +27,9 @@ const BlogsGrid = () => {
   }
 
   if (!isLoading && !isError && blogs?.length > 0) {
-    content = blogs.map((blog) => <SingleBlog key={blog.id} blog={blog} />)
+    content = blogs
+      .filter((blog) => (filter === 'saved' ? blog.isSaved : blog))
+      .map((blog) => <SingleBlog key={blog.id} blog={blog} />)
   }
 
   return (

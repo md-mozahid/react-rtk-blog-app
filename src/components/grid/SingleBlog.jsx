@@ -28,8 +28,8 @@ const SingleBlog = ({ blog = {} }) => {
           {title}
         </Link>
         <div className="lws-tags">
-          {tags.map((tag) => (
-            <span key={tag.id}>#{tag} </span>
+          {tags.map((tag, index) => (
+            <span key={index}>#{tag} </span>
           ))}
         </div>
         <div className="flex gap-2 mt-4">

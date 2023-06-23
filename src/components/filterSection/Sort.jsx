@@ -1,5 +1,3 @@
-
-
 const Sort = () => {
   return (
     <div className="sidebar-content">

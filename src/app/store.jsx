@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit'
 import blogReducer from '../features/blog/blogSlice'
 import blogsReducer from '../features/blogs/blogsSlice'
+import filterSlice from '../features/filter/filterSlice'
 import likesIncrementSlice from '../features/likes/likesIncrementSlice'
 import relatedBlogsSlice from '../features/relatedBlogs/RelatedBlogsSlice'
 import blogSavedSlice from '../features/save/saveSlice'
@@ -12,5 +13,6 @@ export const store = configureStore({
     relatedBlogs: relatedBlogsSlice,
     likes: likesIncrementSlice,
     saved: blogSavedSlice,
+    filters: filterSlice,
   },
 })

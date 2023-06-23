@@ -1,6 +1,6 @@
 // eslint-disable-next-line react/prop-types
 const BlogDetails = ({ blog = {} }) => {
-  const { image, title } = blog
+  const { image, title, tags } = blog
   return (
     <section className="post-page-container">
       <main className="post">
@@ -15,7 +15,9 @@ const BlogDetails = ({ blog = {} }) => {
             {title}
           </h1>
           <div className="tags" id="lws-singleTags">
-            <span>#python,</span> <span>#tech,</span> <span>#git</span>
+            {tags.map((tag) => (
+              <span key={tag.id}>#{tag} </span>
+            ))}
           </div>
           <div className="btn-group">
             {/* <!-- handle like on button click --> */}

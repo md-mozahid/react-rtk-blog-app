@@ -1,9 +1,8 @@
 import { Link } from 'react-router-dom'
 
-// eslint-disable-next-line react/prop-types
 const SingleBlog = ({ blog = {} }) => {
-  // eslint-disable-next-line react/prop-types
-  const { id, image, createdAt, likes, title } = blog
+  const { id, image, createdAt, likes, title, tags } = blog
+
   return (
     <div className="lws-card">
       <Link to={`blogs/${id}`}>
@@ -18,10 +17,12 @@ const SingleBlog = ({ blog = {} }) => {
           </p>
         </div>
         <a href="post.html" className="lws-postTitle">
-          {title}
+          <Link to={`/blogs/${id}`}>{title}</Link>
         </a>
         <div className="lws-tags">
-          <span>#python,</span> <span>#tech,</span> <span>#git</span>
+          {tags.map((tag) => (
+            <span key={tag.id}>#{tag} </span>
+          ))}
         </div>
         <div className="flex gap-2 mt-4">
           <span className="lws-badge"> Saved </span>

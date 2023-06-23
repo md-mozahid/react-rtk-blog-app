@@ -1,16 +1,20 @@
+import { Link } from 'react-router-dom'
+
 const RelatedBlogItem = ({ blog }) => {
-  const { image, createdAt } = blog
+  const { id, title, image, createdAt, tags } = blog
   return (
     <div className="card">
-      <a href="post.html">
+      <Link to={`/blogs/${id}`}>
         <img src={image} className="card-image" alt="" />
-      </a>
+      </Link>
       <div className="p-4">
         <a href="post.html" className="text-lg post-title lws-RelatedPostTitle">
-          Top Github Alternatives
+          <Link to={`/blogs/${id}`}>{title}</Link>
         </a>
         <div className="mb-0 tags">
-          <span>#python,</span> <span>#tech,</span> <span>#git</span>
+          {tags.map((tag) => (
+            <span key={tag.id}>#{tag} </span>
+          ))}
         </div>
         <p>{createdAt}</p>
       </div>

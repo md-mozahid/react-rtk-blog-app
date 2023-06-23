@@ -8,12 +8,14 @@ const RelatedBlogItem = ({ blog }) => {
         <img src={image} className="card-image" alt="" />
       </Link>
       <div className="p-4">
-        <a href="post.html" className="text-lg post-title lws-RelatedPostTitle">
-          <Link to={`/blogs/${id}`}>{title}</Link>
-        </a>
+        <Link
+          to={`/blogs/${id}`}
+          className="text-lg post-title lws-RelatedPostTitle">
+          {title}
+        </Link>
         <div className="mb-0 tags">
-          {tags.map((tag) => (
-            <span key={tag.id}>#{tag} </span>
+          {tags.map((tag, index) => (
+            <span key={index}>#{tag} </span>
           ))}
         </div>
         <p>{createdAt}</p>

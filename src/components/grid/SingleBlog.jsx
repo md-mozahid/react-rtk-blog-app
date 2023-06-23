@@ -1,7 +1,13 @@
+import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 const SingleBlog = ({ blog = {} }) => {
   const { id, image, createdAt, likes, title, tags } = blog
+
+  const dispatch = useDispatch()
+  const { count } = useSelector((state) => state.likes)
+
+  const handleClick = () => {}
 
   return (
     <div className="lws-card">
@@ -12,13 +18,15 @@ const SingleBlog = ({ blog = {} }) => {
         <div className="lws-card-header">
           <p className="lws-publishedDate">{createdAt}</p>
           <p className="lws-likeCount">
-            <i className="fa-regular fa-thumbs-up"></i>
-            {likes}
+            <i className="fa-regular fa-thumbs-up" onClick={handleClick}>
+              {' '}
+            </i>
+            {''} {likes}
           </p>
         </div>
-        <a href="post.html" className="lws-postTitle">
-          <Link to={`/blogs/${id}`}>{title}</Link>
-        </a>
+        <Link to={`/blogs/${id}`} className="lws-postTitle">
+          {title}
+        </Link>
         <div className="lws-tags">
           {tags.map((tag) => (
             <span key={tag.id}>#{tag} </span>

@@ -1,12 +1,15 @@
+import Like from './like'
+import Save from './save'
+
 // eslint-disable-next-line react/prop-types
 const BlogDetails = ({ blog = {} }) => {
-  const { image, title, tags } = blog
+  const { id, likes, isSaved, image, title, tags, description } = blog
   return (
     <section className="post-page-container">
       <main className="post">
         <img
           src={image}
-          alt="githum"
+          alt={title}
           className="w-full rounded-md"
           id="lws-megaThumb"
         />
@@ -15,31 +18,17 @@ const BlogDetails = ({ blog = {} }) => {
             {title}
           </h1>
           <div className="tags" id="lws-singleTags">
-            {tags.map((tag) => (
-              <span key={tag.id}>#{tag} </span>
+            {tags.map((tag, index) => (
+              <span key={index}>#{tag} </span>
             ))}
           </div>
           <div className="btn-group">
-            {/* <!-- handle like on button click --> */}
-            <button className="like-btn" id="lws-singleLinks">
-              <i className="fa-regular fa-thumbs-up"></i> 100
-            </button>
-            {/* <!-- handle save on button click --> */}
+            <Like likes={likes} id={id} />
             {/* <!-- use ".active" class and "Saved" text  if a post is saved, other wise "Save" --> */}
-            <button className="active save-btn" id="lws-singleSavedBtn">
-              <i className="fa-regular fa-bookmark"></i> Saved
-            </button>
+            <Save isSaved={isSaved} id={id} />
           </div>
           <div className="mt-6">
-            <p>
-              A MERN stack comprises a collection of four frameworks (MongoDB,
-              ExpressJs, ReactJs and NodeJs) used to develop full-stack
-              javascript solutions for rapid, scalable, and secure applications.
-              Each framework serves a different purpose in creating successful
-              web applications. It is an excellent choice for companies looking
-              to develop high-quality responsive applications quickly using just
-              one language.
-            </p>
+            <p>{description}</p>
           </div>
         </div>
       </main>
